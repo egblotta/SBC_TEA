@@ -373,19 +373,42 @@ public class TEAView extends javax.swing.JFrame{
         paciente.setEdad(edad);        
         paciente.setSexo(sexo);        
         
+        if(jCheckBoxComunicacion1.isSelected())
+            paciente.setDifcomu1("true");
+        if(jCheckBoxComunicacion2.isSelected())
+            paciente.setDifcomu2("true");
+        if(jCheckBoxComunicacion3.isSelected())
+            paciente.setDifcomu3("true");
+        if(jCheckBoxComunicacion4.isSelected())
+            paciente.setDifcomu4("true");
+        if(jCheckBoxComunicacion5.isSelected())
+            paciente.setDifcomu5("true");
+        if(jCheckBoxSocial1.isSelected())
+            paciente.setDifsoc1("true");
+        if(jCheckBoxSocial1.isSelected())
+            paciente.setDifsoc2("true");
+        if(jCheckBoxSocial1.isSelected())
+            paciente.setDifsoc3("true");
+        if(jCheckBoxSocial1.isSelected())
+            paciente.setDifsoc4("true");
+        if(jCheckBoxSocial1.isSelected())
+            paciente.setDifsoc5("true");
+        if(jCheckBoxComportamiento1.isSelected())
+            paciente.setDifcomp1("true");
+        if(jCheckBoxComportamiento2.isSelected())
+            paciente.setDifcomp1("true");
+        if(jCheckBoxComportamiento3.isSelected())
+            paciente.setDifcomp1("true");
+        if(jCheckBoxComportamiento4.isSelected())
+            paciente.setDifcomp1("true");
+        if(jCheckBoxComportamiento5.isSelected())
+            paciente.setDifcomp1("true");
+        
             try {
-                if(jCheckBoxComunicacion1.isSelected() 
-                && jCheckBoxSocial1.isSelected()
-                && jCheckBoxSocial2.isSelected()){
-            
-             paciente.setDifcomu1("true");
-             paciente.setDifsoc1("true");
-             paciente.setDifsoc2("true");
-
              motor.setInformacion(paciente);
+             //jTextPaneDiagnostico.setText(null);
              motor.ejecutar();
-             //System.out.println(edad+sexo+difComu1+difSoc1+difSoc2);
-                }                
+                                
             } catch (JessException ex) {
                 Logger.getLogger(TEAView.class.getName()).log(Level.SEVERE, null, ex);
             }

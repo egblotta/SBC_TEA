@@ -4,14 +4,14 @@
 
 (defrule diagnostico-autismo
     (Paciente    
-    (edad ?ed &:(< ?ed 3))
+    (edad ?ed &:(<= ?ed 3))
     (sexo ?sexo)
     (difcomu1 ?dComu1)
     (difsoc1 ?dSoc1)
     (difsoc2 ?dSoc2)
     )
     =>
-    (printout t "El paciente tiene un posible trastorno autista" crlf)
+    ;(printout t "El paciente tiene un posible trastorno autista" crlf)
     (assert (respuesta El paciente tiene un posible trastorno autista))
 )
 
@@ -26,12 +26,13 @@
     (difcomu4 $difComu4)
     )
     =>
-    (printout t "El paciente tiene un posible trastorno de Asperger" crlf)
+    ;(printout t "El paciente tiene un posible trastorno de Asperger" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Asperger))
 )
 
 (defrule diagnostico-rett
-    (Paciente 
+    (Paciente
+    (edad ?ed) 
     (sexo ?sexo &:(eq ?sexo "femenino"))
     (difcomp1 $difComp1)
     (difcomu2 $difComu2)
@@ -39,7 +40,7 @@
     (difcomp3 $difComp3)
     )
     =>
-    (printout t "El paciente tiene un posible trastorno de Rett" crlf)
+    ;(printout t "El paciente tiene un posible trastorno de Rett" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Rett))
 )
 
@@ -51,13 +52,8 @@
     (difcomu5 $difComu5)
     )
     =>
-    (printout t "El paciente tiene un posible trastorno de Heller" crlf)
+    ;(printout t "El paciente tiene un posible trastorno de Heller" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Heller))
-)
-
-(defrule generico   
-    (autismo a) => (printout t "Los sintomas son muy variados, por lo tanto el paciente puede presentar un trastorno generalizado del desarrollo no especificado" crlf)
-    (assert (respuesta Los sintomas son muy variados, por lo tanto el paciente puede presentar un trastorno generalizado del desarrollo no especificado))
 )
 
 
