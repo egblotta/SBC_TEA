@@ -1,17 +1,17 @@
 (import sbc_tea.modelo.*)
 
-(deftemplate Paciente (declare (from-class Paciente)))
+(deftemplate Paciente (declare (from-class Paciente)(include-variables TRUE)))
 
 (defrule diagnostico-autismo
     (Paciente    
     (edad ?ed &:(<= ?ed 3))
     (sexo ?sexo)
-    (difcomu1 ?dComu1)
-    (difsoc1 ?dSoc1)
-    (difsoc2 ?dSoc2)
+    (difcomu1 ?dComu1 &:(eq ?dComu1 TRUE))
+    (difsoc1 ?dSoc1 &:(eq ?dSoc1 TRUE))
+    (difsoc2 ?dSoc2 &:(eq ?dSoc2 TRUE))
     )
     =>
-    ;(printout t "El paciente tiene un posible trastorno autista" crlf)
+    (printout t "El paciente tiene un posible trastorno autista" crlf)
     (assert (respuesta El paciente tiene un posible trastorno autista))
 )
 
@@ -19,40 +19,40 @@
     (Paciente 
     (edad ?ed) 
     (sexo ?sexo)
-    (difcomu3 $difComu3)
-    (difsoc3 $difSoc3)
-    (difsoc4 $difSoc4)
-    (difsoc5 $difSoc5)
-    (difcomu4 $difComu4)
+    (difcomu3 ?dComu3 &:(eq ?dComu3 TRUE))
+    (difsoc3 ?dSoc3 &:(eq ?dSoc3 TRUE))
+    (difsoc4 ?dSoc4 &:(eq ?dSoc4 TRUE))
+    (difsoc5 ?dSoc5 &:(eq ?dSoc5 TRUE))
+    (difcomu4 ?dComu4 &:(eq ?dComu4 TRUE))
     )
     =>
-    ;(printout t "El paciente tiene un posible trastorno de Asperger" crlf)
+    (printout t "El paciente tiene un posible trastorno de Asperger" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Asperger))
 )
 
 (defrule diagnostico-rett
     (Paciente
     (edad ?ed) 
-    (sexo ?sexo &:(eq ?sexo "femenino"))
-    (difcomp1 $difComp1)
-    (difcomu2 $difComu2)
-    (difcomp2 $difComp2)
-    (difcomp3 $difComp3)
+    (sexo ?sexo)
+    (difcomp1 ?dComp1 &:(eq ?dComp1 TRUE))
+    (difcomu2 ?dComu2 &:(eq ?dComu2 TRUE))
+    (difcomp2 ?dComp2 &:(eq ?dComp2 TRUE))
+    (difcomp3 ?dComp3 &:(eq ?dComp3 TRUE))
     )
     =>
-    ;(printout t "El paciente tiene un posible trastorno de Rett" crlf)
+    (printout t "El paciente tiene un posible trastorno de Rett" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Rett))
 )
 
 (defrule diagnostico-heller
     (Paciente 
     (edad ?edad &:(and(< ?edad 10)(> ?edad 3 )))
-    (difcomp1 $difComp1)
-    (difcomp5 $difComp5)
-    (difcomu5 $difComu5)
+    (difcomp1 ?dComp1 &:(eq ?dComp1 TRUE))
+    (difcomp5 ?dComp5 &:(eq ?dComp5 TRUE)) 
+    (difcomu5 ?dComu5 &:(eq ?dComu5 TRUE))
     )
     =>
-    ;(printout t "El paciente tiene un posible trastorno de Heller" crlf)
+    (printout t "El paciente tiene un posible trastorno de Heller" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Heller))
 )
 

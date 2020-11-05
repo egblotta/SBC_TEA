@@ -4,21 +4,21 @@ public class Paciente {
     
     public int edad;
     public String sexo;
-    public String difsoc1;
-    public String difsoc2;
-    public String difsoc3;
-    public String difsoc4;
-    public String difsoc5;
-    public String difcomu1;
-    public String difcomu2;
-    public String difcomu3;
-    public String difcomu4;
-    public String difcomu5;
-    public String difcomp1;
-    public String difcomp2;
-    public String difcomp3;
-    public String difcomp4;
-    public String difcomp5;
+    public boolean difsoc1;
+    public boolean difsoc2;
+    public boolean difsoc3;
+    public boolean difsoc4;
+    public boolean difsoc5;
+    public boolean difcomu1;
+    public boolean difcomu2;
+    public boolean difcomu3;
+    public boolean difcomu4;
+    public boolean difcomu5;
+    public boolean difcomp1;
+    public boolean difcomp2;
+    public boolean difcomp3;
+    public boolean difcomp4;
+    public boolean difcomp5;
 
     public Paciente() {    }    
 
@@ -39,126 +39,124 @@ public class Paciente {
         this.sexo = sexo;
     }
 
-    public String getDifsoc1() {
+    public boolean isDifsoc1() {
         return difsoc1;
     }
 
-    public void setDifsoc1(String difsoc1) {
+    public void setDifsoc1(boolean difsoc1) {
         this.difsoc1 = difsoc1;
     }
 
-    public String getDifsoc2() {
+    public boolean isDifsoc2() {
         return difsoc2;
     }
 
-    public void setDifsoc2(String difsoc2) {
+    public void setDifsoc2(boolean difsoc2) {
         this.difsoc2 = difsoc2;
     }
 
-    public String getDifsoc3() {
+    public boolean isDifsoc3() {
         return difsoc3;
     }
 
-    public void setDifsoc3(String difsoc3) {
+    public void setDifsoc3(boolean difsoc3) {
         this.difsoc3 = difsoc3;
     }
 
-    public String getDifsoc4() {
+    public boolean isDifsoc4() {
         return difsoc4;
     }
 
-    public void setDifsoc4(String difsoc4) {
+    public void setDifsoc4(boolean difsoc4) {
         this.difsoc4 = difsoc4;
     }
 
-    public String getDifsoc5() {
+    public boolean isDifsoc5() {
         return difsoc5;
     }
 
-    public void setDifsoc5(String difsoc5) {
+    public void setDifsoc5(boolean difsoc5) {
         this.difsoc5 = difsoc5;
     }
 
-    public String getDifcomu1() {
+    public boolean isDifcomu1() {
         return difcomu1;
     }
 
-    public void setDifcomu1(String difcomu1) {
+    public void setDifcomu1(boolean difcomu1) {
         this.difcomu1 = difcomu1;
     }
 
-    public String getDifcomu2() {
+    public boolean isDifcomu2() {
         return difcomu2;
     }
 
-    public void setDifcomu2(String difcomu2) {
+    public void setDifcomu2(boolean difcomu2) {
         this.difcomu2 = difcomu2;
     }
 
-    public String getDifcomu3() {
+    public boolean isDifcomu3() {
         return difcomu3;
     }
 
-    public void setDifcomu3(String difcomu3) {
+    public void setDifcomu3(boolean difcomu3) {
         this.difcomu3 = difcomu3;
     }
 
-    public String getDifcomu4() {
+    public boolean isDifcomu4() {
         return difcomu4;
     }
 
-    public void setDifcomu4(String difcomu4) {
+    public void setDifcomu4(boolean difcomu4) {
         this.difcomu4 = difcomu4;
     }
 
-    public String getDifcomu5() {
+    public boolean isDifcomu5() {
         return difcomu5;
     }
 
-    public void setDifcomu5(String difcomu5) {
+    public void setDifcomu5(boolean difcomu5) {
         this.difcomu5 = difcomu5;
     }
 
-    public String getDifcomp1() {
+    public boolean isDifcomp1() {
         return difcomp1;
     }
 
-    public void setDifcomp1(String difcomp1) {
+    public void setDifcomp1(boolean difcomp1) {
         this.difcomp1 = difcomp1;
     }
 
-    public String getDifcomp2() {
+    public boolean isDifcomp2() {
         return difcomp2;
     }
 
-    public void setDifcomp2(String difcomp2) {
+    public void setDifcomp2(boolean difcomp2) {
         this.difcomp2 = difcomp2;
     }
 
-    public String getDifcomp3() {
+    public boolean isDifcomp3() {
         return difcomp3;
     }
 
-    public void setDifcomp3(String difcomp3) {
+    public void setDifcomp3(boolean difcomp3) {
         this.difcomp3 = difcomp3;
     }
 
-    public String getDifcomp4() {
+    public boolean isDifcomp4() {
         return difcomp4;
     }
 
-    public void setDifcomp4(String difcomp4) {
+    public void setDifcomp4(boolean difcomp4) {
         this.difcomp4 = difcomp4;
     }
 
-    public String getDifcomp5() {
+    public boolean isDifcomp5() {
         return difcomp5;
     }
 
-    public void setDifcomp5(String difcomp5) {
+    public void setDifcomp5(boolean difcomp5) {
         this.difcomp5 = difcomp5;
     }
-    
-    
-       
+         
 }

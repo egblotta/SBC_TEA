@@ -32,13 +32,9 @@ public class Motor {
     public void setInformacion(Paciente paciente) throws JessException{
 
          try{
-             /*String asse = ("(Paciente(edad "+paciente.getEdad()+")(sexo "+paciente.getSexo().toLowerCase()+")(difcomu1 "+paciente.getDifcomu1()+")"
-                     + "(difsoc1 "+paciente.getDifsoc1()+")(difsoc2 "+paciente.getDifsoc1()+"))");*/
-             
-             //motor.assertString(asse);
              motor.add(paciente);
-             
-            System.out.println("assert "+ paciente);
+             motor.run();
+            //System.out.println("assert "+ paciente);
         }catch(JessException e){             
             Logger.getLogger(Motor.class.getName()).log(Level.SEVERE, null, e);
             }

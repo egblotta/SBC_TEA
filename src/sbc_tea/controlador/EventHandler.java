@@ -15,6 +15,7 @@ public class EventHandler implements JessListener{
 
     @Override
     public void eventHappened(JessEvent je){
+        
         int type = je.getType();
         Rete rete = (Rete)je.getSource();
         Helper helper = new Helper(rete);
@@ -22,15 +23,13 @@ public class EventHandler implements JessListener{
         if(type == JessEvent.DEFRULE_FIRED){
            Fact respuesta = helper.findFactByTempleteName("MAIN::respuesta");
            
-            if (respuesta != null){            
-               
+            if (respuesta != null){                           
                 try {
-                    String res = respuesta.get(0).toString();
-                    
-                    System.out.println("Respuesta: "+ res);   
+                    String res = respuesta.get(0).toString();                    
+                    System.out.println("Respuesta: "+ res);
                     vista.mostrarRespuesta(res);
                 } catch (JessException e) {
-                    e.printStackTrace();
+                    System.out.println("Error: "+ e);
                 }
             }
             else

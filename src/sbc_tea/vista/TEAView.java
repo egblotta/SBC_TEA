@@ -10,7 +10,7 @@ import sbc_tea.controlador.Motor;
 
 public class TEAView extends javax.swing.JFrame{
     
-    Motor motor;
+    private Motor motor;
 
     public void setMotorController(Motor motorController) {
         this.motor = motorController;
@@ -374,47 +374,48 @@ public class TEAView extends javax.swing.JFrame{
         paciente.setSexo(sexo);        
         
         if(jCheckBoxComunicacion1.isSelected())
-            paciente.setDifcomu1("true");
+            paciente.setDifcomu1(true);
         if(jCheckBoxComunicacion2.isSelected())
-            paciente.setDifcomu2("true");
+            paciente.setDifcomu2(true);
         if(jCheckBoxComunicacion3.isSelected())
-            paciente.setDifcomu3("true");
+            paciente.setDifcomu3(true);
         if(jCheckBoxComunicacion4.isSelected())
-            paciente.setDifcomu4("true");
+            paciente.setDifcomu4(true);
         if(jCheckBoxComunicacion5.isSelected())
-            paciente.setDifcomu5("true");
+            paciente.setDifcomu5(true);
         if(jCheckBoxSocial1.isSelected())
-            paciente.setDifsoc1("true");
-        if(jCheckBoxSocial1.isSelected())
-            paciente.setDifsoc2("true");
-        if(jCheckBoxSocial1.isSelected())
-            paciente.setDifsoc3("true");
-        if(jCheckBoxSocial1.isSelected())
-            paciente.setDifsoc4("true");
-        if(jCheckBoxSocial1.isSelected())
-            paciente.setDifsoc5("true");
+            paciente.setDifsoc1(true);
+        if(jCheckBoxSocial2.isSelected())
+            paciente.setDifsoc2(true);
+        if(jCheckBoxSocial3.isSelected())
+            paciente.setDifsoc3(true);
+        if(jCheckBoxSocial4.isSelected())
+            paciente.setDifsoc4(true);
+        if(jCheckBoxSocial5.isSelected())
+            paciente.setDifsoc5(true);
         if(jCheckBoxComportamiento1.isSelected())
-            paciente.setDifcomp1("true");
+            paciente.setDifcomp1(true);
         if(jCheckBoxComportamiento2.isSelected())
-            paciente.setDifcomp1("true");
+            paciente.setDifcomp2(true);
         if(jCheckBoxComportamiento3.isSelected())
-            paciente.setDifcomp1("true");
+            paciente.setDifcomp3(true);
         if(jCheckBoxComportamiento4.isSelected())
-            paciente.setDifcomp1("true");
+            paciente.setDifcomp4(true);
         if(jCheckBoxComportamiento5.isSelected())
-            paciente.setDifcomp1("true");
+            paciente.setDifcomp5(true);
         
             try {
              motor.setInformacion(paciente);
              //jTextPaneDiagnostico.setText(null);
              motor.ejecutar();
-                                
+            
             } catch (JessException ex) {
                 Logger.getLogger(TEAView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else
-            System.out.println("El campo edad es requerido");
+            jTextPaneDiagnostico.setText("*El campo edad es requerido*");
+            //System.out.println("El campo edad es requerido");
                    
     }//GEN-LAST:event_jButtonConsultarActionPerformed
     
