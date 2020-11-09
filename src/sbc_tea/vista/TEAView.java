@@ -448,16 +448,13 @@ public class TEAView extends javax.swing.JFrame{
             paciente.setDifcomp5(true);            
   
             try {
-             motor.setInformacion(paciente);
-             
-            
-            } catch (JessException ex) {
+             motor.setInformacion(paciente);                    
+                } catch (JessException ex) {
                 Logger.getLogger(TEAView.class.getName()).log(Level.SEVERE, null, ex);
-            } 
+                } 
         }
         else
             jTextPaneDiagnostico.setText("*Ningun campo puede estar vacio*");
-            //System.out.println("El campo edad es requerido");
                    
     }//GEN-LAST:event_jButtonConsultarActionPerformed
     

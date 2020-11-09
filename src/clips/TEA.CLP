@@ -65,5 +65,3 @@
     ;(printout t "Los sintomas clinicos son demasiados heterogeneos" crlf)
     ;(assert (respuesta Los sintomas clinicos son demasiados heterogeneos))
 )
-
-

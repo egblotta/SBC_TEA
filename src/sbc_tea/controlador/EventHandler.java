@@ -2,7 +2,6 @@ package sbc_tea.controlador;
 
 import util.Helper;
 import jess.*;
-import sbc_tea.modelo.Diagnostico;
 import sbc_tea.vista.TEAView;
 
 
@@ -29,14 +28,14 @@ public class EventHandler implements JessListener{
                 try {
                     String res = respuesta.get(0).toString();
                     
-                    System.out.println("Respuesta: "+ res);
+                    //System.out.println("Respuesta: "+ res);
                     vista.mostrarRespuesta(res);
                 } catch (JessException e) {
                     System.out.println("Error: "+ e);
                 } 
             }
             else
-                vista.mostrarRespuesta("Sintomas clinicos demasiados heterogeneos ");                
+                vista.mostrarRespuesta("No hay respuestas");                
         }        
     }    
 }
