@@ -2,12 +2,14 @@ package sbc_tea.controlador;
 
 import util.Helper;
 import jess.*;
+import sbc_tea.modelo.Diagnostico;
 import sbc_tea.vista.TEAView;
 
 
 public class EventHandler implements JessListener{
 
     TEAView vista;
+    public Diagnostico diagnostico;  
     
     public EventHandler(TEAView vista){
         this.vista = vista;
@@ -21,19 +23,23 @@ public class EventHandler implements JessListener{
         Helper helper = new Helper(rete);
 
         if(type == JessEvent.DEFRULE_FIRED){
-           Fact respuesta = helper.findFactByTempleteName("MAIN::respuesta");
+           Fact respuesta;
+           respuesta = helper.findFactByTempleteName("MAIN::respuesta");
            
             if (respuesta != null){                           
                 try {
-                    String res = respuesta.get(0).toString();                    
+                    String res = respuesta.get(0).toString();
+                    diagnostico = new Diagnostico();
+                    
                     System.out.println("Respuesta: "+ res);
+                    diagnostico.setResultado(res);
                     vista.mostrarRespuesta(res);
                 } catch (JessException e) {
                     System.out.println("Error: "+ e);
-                }
+                } 
             }
             else
-                vista.mostrarRespuesta("Respuesta no encontrada ");
+                vista.mostrarRespuesta("Sintomas clinicos demasiados heterogeneos ");                
         }        
     }    
 }

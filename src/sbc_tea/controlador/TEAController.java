@@ -16,7 +16,8 @@ public class TEAController {
         
         teaView.setMotorController(motorController);
         
-        motorController.addEscuchador(eventController);            
+        motorController.addEscuchador(eventController);
+        motorController.ejecutar();
     }
     
 }

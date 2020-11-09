@@ -32,7 +32,7 @@
 
 (defrule diagnostico-rett
     (Paciente
-    (edad ?ed) 
+    (edad ?ed)  
     (sexo ?sexo)
     (difcomp1 ?dComp1 &:(eq ?dComp1 TRUE))
     (difcomu2 ?dComu2 &:(eq ?dComu2 TRUE))
@@ -54,6 +54,16 @@
     =>
     (printout t "El paciente tiene un posible trastorno de Heller" crlf)
     (assert (respuesta El paciente tiene un posible trastorno de Heller))
+)
+
+(defrule diagnostico-generico
+    (Paciente 
+    (edad ?edad)
+    (sexo ?sexo)
+    )
+    =>
+    (printout t "Los sintomas clinicos son demasiados heterogeneos" crlf)
+    (assert (respuesta Los sintomas clinicos son demasiados heterogeneos))
 )
 
 

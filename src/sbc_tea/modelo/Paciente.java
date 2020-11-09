@@ -20,7 +20,7 @@ public class Paciente {
     public boolean difcomp4;
     public boolean difcomp5;
 
-    public Paciente() {    }    
+    public Paciente() {    }  
 
     public int getEdad() {
         return edad;
@@ -28,8 +28,7 @@ public class Paciente {
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-    
+    }    
 
     public String getSexo() {
         return sexo;
