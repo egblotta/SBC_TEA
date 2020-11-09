@@ -16,8 +16,9 @@ import java.util.Date;
 public class TEAView extends javax.swing.JFrame{
     
     private Motor motor;
-    public Paciente paciente;
-    public Diagnostico diagnostico;
+    Paciente paciente;
+    Diagnostico diagnostico = new Diagnostico();
+    Archivo archivo = new Archivo();
 
     public void setMotorController(Motor motorController) {
         this.motor = motorController;
@@ -395,10 +396,10 @@ public class TEAView extends javax.swing.JFrame{
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         
-        paciente = new Paciente();        
-        diagnostico = new Diagnostico();
+        paciente = new Paciente();      
+       
         Date fecha = new Date();
-        Archivo archivo = new Archivo();
+
         
         String sexo = String.valueOf(cbSexo.getSelectedItem().toString());
         String nombre = txtNombre.getText();
@@ -448,9 +449,9 @@ public class TEAView extends javax.swing.JFrame{
   
             try {
              motor.setInformacion(paciente);
-             archivo.CrearArchivo(diagnostico);
+             
             
-            } catch (JessException | FileNotFoundException | UnsupportedEncodingException ex) {
+            } catch (JessException ex) {
                 Logger.getLogger(TEAView.class.getName()).log(Level.SEVERE, null, ex);
             } 
         }
@@ -462,6 +463,16 @@ public class TEAView extends javax.swing.JFrame{
     
     public void mostrarRespuesta(String res){
        jTextPaneDiagnostico.setText(res);
+        guardarRespuesta(res);
+    }
+    
+    public void guardarRespuesta(String res){
+    diagnostico.setResultado(res);
+        try {
+            archivo.CrearArchivo(diagnostico);
+        } catch (FileNotFoundException | UnsupportedEncodingException ex) {
+            Logger.getLogger(TEAView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
  
 

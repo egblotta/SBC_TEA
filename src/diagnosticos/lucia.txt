@@ -1,0 +1,5 @@
+Diagnostico n° 90
+Fecha: Mon Nov 09 00:36:41 ART 2020
+Nombre del Paciente: lucia
+Edad: 1
+Resultado: El paciente tiene un posible trastorno autista

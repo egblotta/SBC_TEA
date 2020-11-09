@@ -1,0 +1,5 @@
+Diagnostico n° 203
+Fecha: Mon Nov 09 00:35:58 ART 2020
+Nombre del Paciente: emiliano
+Edad: 2
+Resultado: El paciente tiene un posible trastorno autista

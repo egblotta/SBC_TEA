@@ -9,7 +9,6 @@ import sbc_tea.vista.TEAView;
 public class EventHandler implements JessListener{
 
     TEAView vista;
-    public Diagnostico diagnostico;  
     
     public EventHandler(TEAView vista){
         this.vista = vista;
@@ -29,10 +28,8 @@ public class EventHandler implements JessListener{
             if (respuesta != null){                           
                 try {
                     String res = respuesta.get(0).toString();
-                    diagnostico = new Diagnostico();
                     
                     System.out.println("Respuesta: "+ res);
-                    diagnostico.setResultado(res);
                     vista.mostrarRespuesta(res);
                 } catch (JessException e) {
                     System.out.println("Error: "+ e);

@@ -31,7 +31,6 @@ public class Motor {
 
     public void setInformacion(Paciente paciente) throws JessException{
          try{
-             
              motor.add(paciente);
              motor.run();
             //System.out.println("assert "+ paciente);
